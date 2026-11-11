@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a044e"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" rx="20" fill="url(#g)"/>
+  <rect width="400" height="300" rx="20" fill="url(#shine)"/>
+  <circle cx="330" cy="60" r="90" fill="#ffffff" opacity="0.06"/>
+  <circle cx="60" cy="250" r="70" fill="#000000" opacity="0.15"/>
+  <text x="200" y="135" font-size="68" text-anchor="middle" dominant-baseline="middle">🌟</text>
+  <text x="200" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Inspiración</text>
+  <text x="200" y="242" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#f3e8ff" opacity="0.85" text-anchor="middle">Nunca te rindas</text>
+</svg>

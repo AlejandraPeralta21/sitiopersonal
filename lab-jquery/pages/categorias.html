@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#041e21" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Alejandra Space" />
+  <title>Categorías | ALEJANDRA SPACE</title>
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../css/dark-mode.css" />
+  <link rel="stylesheet" href="../css/light-mode.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <div class="ambient-orb ambient-orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb ambient-orb-2" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <aside id="side-drawer" class="side-drawer" aria-label="Menú principal">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="../images/profile/profile.png" alt="Alejandra Peralta" class="drawer-avatar" />
+        <div class="drawer-brand-text">
+          <h2>ALEJANDRA SPACE</h2>
+          <span>Edición Laptop · Categorías</span>
+        </div>
+      </div>
+      <button type="button" id="btn-close-drawer" class="icon-btn" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <nav class="drawer-nav" aria-label="Navegación lateral">
+      <a href="../index.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
+      <a href="perfil.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mi perfil</a>
+      <a href="#sec-musica" class="drawer-link is-active" data-view-target="sec-musica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Música (Spotify)</a>
+      <a href="#sec-juegos" class="drawer-link" data-view-target="sec-juegos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4"/><path d="M8 10v4"/></svg>Juegos</a>
+      <a href="#sec-peliculas" class="drawer-link" data-view-target="sec-peliculas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>Películas y series</a>
+      <a href="#sec-deportes" class="drawer-link" data-view-target="sec-deportes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/></svg>Deportes</a>
+      <a href="#sec-universidad" class="drawer-link" data-view-target="sec-universidad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Universidad</a>
+      <a href="horario.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Mi horario</a>
+      <a href="favoritos.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Mis favoritos</span><span class="sidebar-badge" data-fav-badge>18</span></a>
+      <a href="../index.html#sec-redes" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></svg>Redes sociales</a>
+      <button type="button" class="drawer-link" data-open-modal="modal-settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>Configuración</button>
+      <a href="contacto.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contacto</a>
+    </nav>
+    <div class="drawer-footer">
+      <div class="card-tags" style="justify-content:center;">
+        <a href="perfil.html" class="tag-chip">Perfil</a>
+        <a href="categorias.html" class="tag-chip">Categorías</a>
+        <a href="horario.html" class="tag-chip">Horario</a>
+        <a href="favoritos.html" class="tag-chip">Favoritos</a>
+        <a href="contacto.html" class="tag-chip">Contacto</a>
+      </div>
+    </div>
+  </aside>
+
+  <header class="app-header">
+    <div class="header-left">
+      <a href="#side-drawer" id="btn-hamburger" class="icon-btn" aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="16" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </a>
+      <div class="header-greeting">
+        <span class="greeting-title">Categorías</span>
+        <span id="current-date" class="greeting-date">Música Spotify, Juegos, Deportes y UDS</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="btn-install-pwa" class="btn-glow pwa-install-btn" data-install-pwa style="display:none;" title="Descargar e instalar como App">📲 Instalar</button>
+      <a href="../index.html" class="btn-glass" style="padding:7px 12px; font-size:0.78rem;">← Inicio</a>
+      <button type="button" id="btn-theme-toggle" class="icon-btn" aria-label="Cambiar tema">☀</button>
+      <button type="button" id="btn-open-settings" class="icon-btn" aria-label="Configuración">⚙</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <!-- Selector rápido de categoría sin scroll -->
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap; margin-bottom:6px; flex-shrink:0;">
+      <div class="subcat-tabs" style="margin-bottom:0;">
+        <a href="#sec-musica" class="subcat-btn is-active" data-view-target="sec-musica">♫ Música</a>
+        <a href="#sec-juegos" class="subcat-btn" data-view-target="sec-juegos">🎮 Juegos</a>
+        <a href="#sec-peliculas" class="subcat-btn" data-view-target="sec-peliculas">🎬 Películas</a>
+        <a href="#sec-deportes" class="subcat-btn" data-view-target="sec-deportes">🏐 Deportes</a>
+        <a href="#sec-universidad" class="subcat-btn" data-view-target="sec-universidad">🎓 Universidad</a>
+      </div>
+      <div id="contenedorMenu" class="pwa-hydration-box" data-hidratado="false">
+        <button type="button" id="btnPWA" class="btn-estatico" aria-expanded="false" aria-controls="navMenu">Cargando Menú...</button>
+        <button type="button" class="hydration-live-pill" data-hydration-pill data-open-modal="modal-settings" aria-live="polite" title="Estado de Hidratación Progresiva">
+          <span class="hydration-pill-dot"></span>
+          <span class="hydration-pill-text">● Fase 1: HTML Estático</span>
+        </button>
+        <nav id="navMenu" class="pwa-nav-menu" style="display:none;" aria-label="Menú Rápido PWA">
+          <a href="../index.html" class="pwa-nav-link"><span>⌂ Inicio Orbital</span><span>→</span></a>
+          <a href="perfil.html" class="pwa-nav-link"><span>★ Mi Perfil</span><span>→</span></a>
+          <a href="horario.html" class="pwa-nav-link"><span>🗓 Mi Horario</span><span>→</span></a>
+          <a href="favoritos.html" class="pwa-nav-link"><span>♥ Mis Favoritos</span><span>→</span></a>
+          <a href="contacto.html" class="pwa-nav-link"><span>✉ Contacto</span><span>→</span></a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Música estilo Spotify -->
+    <section id="sec-musica" class="app-section is-active-view" data-section-category="musica">
+      <div class="spotify-shell">
+        <div id="music-player-bar" class="spotify-player-card">
+          <div class="spotify-top-bar">
+            <span class="spotify-badge"><span class="spotify-dot"></span> SPOTIFY MIX</span>
+            <div class="equalizer-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="spotify-now-playing">
+            <div class="spotify-cover-wrap"><img id="player-cover" src="../images/music/morat.webp" alt="Portada" class="img-face" /></div>
+            <div class="spotify-track-meta">
+              <div id="player-track" class="spotify-track-title">Cuando Nadie Ve</div>
+              <div id="player-artist" class="spotify-track-artist">Morat · Álbum: Balas Perdidas</div>
+              <div id="player-audio-mode" class="spotify-audio-source">Audio Melódico Web Audio listo</div>
+            </div>
+          </div>
+          <div class="spotify-seek-wrap">
+            <input type="range" id="sp-seek-bar" class="spotify-range" min="0" max="24" value="0" />
+            <div class="spotify-times"><span id="sp-time-current">0:00</span><span id="sp-time-total">0:24</span></div>
+          </div>
+          <div class="spotify-controls-row">
+            <div class="spotify-transport">
+              <button type="button" id="sp-btn-shuffle" class="sp-ctrl-btn">⇄</button>
+              <button type="button" id="sp-btn-prev" class="sp-ctrl-btn">⏮</button>
+              <button type="button" id="btn-toggle-play" class="sp-play-btn">▶</button>
+              <button type="button" id="sp-btn-next" class="sp-ctrl-btn">⏭</button>
+              <button type="button" id="sp-btn-repeat" class="sp-ctrl-btn">↻</button>
+            </div>
+            <label for="sp-local-mp3" class="spotify-upload-mp3">+ MP3<input type="file" id="sp-local-mp3" class="file-input-hidden" accept="audio/*" /></label>
+          </div>
+          <audio id="spotify-audio-el" preload="none"></audio>
+        </div>
+
+        <div class="spotify-playlist-panel">
+          <div class="spotify-list-header"><span># · CANCIÓN, ARTISTA Y ÁLBUM</span><span>DURACIÓN</span></div>
+          <div class="sp-artist-filters" data-sp-artist-group="musica">
+            <button type="button" class="sp-artist-pill is-active" data-sp-artist="all">Todos</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="morat">Morat</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="shawn">Shawn Mendes</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="taylor">Taylor Swift</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="humbe">Humbe</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="reik">Reik</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="album-balas">Balas Perdidas</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="album-lover">Lover / Midnights</button>
+            <button type="button" class="sp-artist-pill" data-sp-artist="album-illuminate">Illuminate</button>
+          </div>
+          <div id="spotify-tracklist" class="spotify-tracklist">
+            <div class="spotify-track-row is-active-track filterable-item" data-track-index="0" data-artist-key="morat" data-album-key="album-balas" data-category="musica" data-subcategory="artistas playlists canciones albumes generos" data-track="Cuando Nadie Ve" data-artist="Morat · Álbum: Balas Perdidas" data-cover="../images/music/morat.webp">
+              <span class="sp-row-num">1</span><img src="../images/music/morat.webp" alt="Morat" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Cuando Nadie Ve</div><div class="sp-row-artist">Morat · Álbum: Balas Perdidas</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-morat">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="1" data-artist-key="morat" data-album-key="album-balas" data-category="musica" data-subcategory="artistas canciones albumes generos" data-track="Besos en Guerra" data-artist="Morat · Álbum: Balas Perdidas" data-cover="../images/music/morat2.webp">
+              <span class="sp-row-num">2</span><img src="../images/music/morat2.webp" alt="Morat" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Besos en Guerra</div><div class="sp-row-artist">Morat · Álbum: Balas Perdidas</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-morat-besos">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="2" data-artist-key="morat" data-album-key="album-sobre" data-category="musica" data-subcategory="artistas canciones albumes recomendaciones" data-track="Cómo Te Atreves" data-artist="Morat · Álbum: Sobre el Amor" data-cover="../images/music/morat.webp">
+              <span class="sp-row-num">3</span><img src="../images/music/morat.webp" alt="Morat" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Cómo Te Atreves</div><div class="sp-row-artist">Morat · Álbum: Sobre el Amor</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-morat-como">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="3" data-artist-key="shawn" data-album-key="album-illuminate" data-category="musica" data-subcategory="artistas canciones albumes generos" data-track="Treat You Better" data-artist="Shawn Mendes · Álbum: Illuminate" data-cover="../images/music/shawnmendes.webp">
+              <span class="sp-row-num">4</span><img src="../images/music/shawnmendes.webp" alt="Shawn Mendes" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Treat You Better</div><div class="sp-row-artist">Shawn Mendes · Álbum: Illuminate</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-shawn">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="4" data-artist-key="shawn" data-album-key="album-handwritten" data-category="musica" data-subcategory="artistas canciones albumes recomendaciones" data-track="Stitches" data-artist="Shawn Mendes · Álbum: Handwritten" data-cover="../images/music/shawnmendes.webp">
+              <span class="sp-row-num">5</span><img src="../images/music/shawnmendes.webp" alt="Shawn Mendes" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Stitches</div><div class="sp-row-artist">Shawn Mendes · Álbum: Handwritten</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-shawn-stitches">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="5" data-artist-key="shawn" data-album-key="album-illuminate" data-category="musica" data-subcategory="artistas canciones playlists albumes" data-track="There's Nothing Holdin' Me Back" data-artist="Shawn Mendes · Álbum: Illuminate" data-cover="../images/music/shawnmendes.webp">
+              <span class="sp-row-num">6</span><img src="../images/music/shawnmendes.webp" alt="Shawn Mendes" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">There's Nothing Holdin' Me Back</div><div class="sp-row-artist">Shawn Mendes · Álbum: Illuminate</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-shawn-holdin">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="6" data-artist-key="taylor" data-album-key="album-lover" data-category="musica" data-subcategory="artistas albumes canciones generos" data-track="Cruel Summer" data-artist="Taylor Swift · Álbum: Lover" data-cover="../images/music/tylorswift.webp">
+              <span class="sp-row-num">7</span><img src="../images/music/tylorswift.webp" alt="Taylor Swift" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Cruel Summer</div><div class="sp-row-artist">Taylor Swift · Álbum: Lover</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-taylor">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="7" data-artist-key="taylor" data-album-key="album-lover" data-category="musica" data-subcategory="artistas albumes canciones playlists" data-track="Anti-Hero" data-artist="Taylor Swift · Álbum: Midnights" data-cover="../images/music/tylorswift.webp">
+              <span class="sp-row-num">8</span><img src="../images/music/tylorswift.webp" alt="Taylor Swift" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Anti-Hero</div><div class="sp-row-artist">Taylor Swift · Álbum: Midnights</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-taylor-antihero">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="8" data-artist-key="taylor" data-album-key="album-fearless" data-category="musica" data-subcategory="artistas albumes canciones recomendaciones" data-track="Love Story (TV)" data-artist="Taylor Swift · Álbum: Fearless" data-cover="../images/music/tylorswift.webp">
+              <span class="sp-row-num">9</span><img src="../images/music/tylorswift.webp" alt="Taylor Swift" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Love Story (Taylor's Version)</div><div class="sp-row-artist">Taylor Swift · Álbum: Fearless</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-taylor-lovestory">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="9" data-artist-key="humbe" data-album-key="album-entropia" data-category="musica" data-subcategory="artistas recomendaciones canciones albumes" data-track="Amor de Cine" data-artist="Humbe · Álbum: Entropía" data-cover="../images/music/humbe.webp">
+              <span class="sp-row-num">10</span><img src="../images/music/humbe.webp" alt="Humbe" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Amor de Cine</div><div class="sp-row-artist">Humbe · Álbum: Entropía</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-humbe">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="10" data-artist-key="humbe" data-album-key="album-aurora" data-category="musica" data-subcategory="artistas canciones albumes generos" data-track="El Poeta" data-artist="Humbe · Álbum: Aurora" data-cover="../images/music/humbe.webp">
+              <span class="sp-row-num">11</span><img src="../images/music/humbe.webp" alt="Humbe" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">El Poeta</div><div class="sp-row-artist">Humbe · Álbum: Aurora</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-humbe-poeta">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="11" data-artist-key="humbe" data-album-key="album-esencia" data-category="musica" data-subcategory="artistas canciones recomendaciones" data-track="Fantasmas" data-artist="Humbe · Álbum: Esencia" data-cover="../images/music/humbe.webp">
+              <span class="sp-row-num">12</span><img src="../images/music/humbe.webp" alt="Humbe" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Fantasmas</div><div class="sp-row-artist">Humbe · Álbum: Esencia</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-humbe-fantasmas">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="12" data-artist-key="reik" data-album-key="album-desamor" data-category="musica" data-subcategory="artistas generos canciones albumes" data-track="Ya Me Enteré" data-artist="Reik · Álbum: Des/Amor" data-cover="../images/music/reik.webp">
+              <span class="sp-row-num">13</span><img src="../images/music/reik.webp" alt="Reik" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Ya Me Enteré</div><div class="sp-row-artist">Reik · Álbum: Des/Amor</div></div>
+              <button type="button" class="sp-row-fav is-fav" data-fav-id="music-reik">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="13" data-artist-key="reik" data-album-key="album-reik" data-category="musica" data-subcategory="artistas generos canciones" data-track="Noviembre Sin Ti" data-artist="Reik · Álbum: Reik" data-cover="../images/music/reik.webp">
+              <span class="sp-row-num">14</span><img src="../images/music/reik.webp" alt="Reik" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Noviembre Sin Ti</div><div class="sp-row-artist">Reik · Álbum: Reik</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-reik-noviembre">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="14" data-artist-key="reik" data-album-key="album-peligro" data-category="musica" data-subcategory="artistas generos canciones recomendaciones" data-track="Creo en Ti" data-artist="Reik · Álbum: Peligro" data-cover="../images/music/reik.webp">
+              <span class="sp-row-num">15</span><img src="../images/music/reik.webp" alt="Reik" class="sp-row-thumb img-face" />
+              <div class="sp-row-info"><div class="sp-row-title">Creo en Ti</div><div class="sp-row-artist">Reik · Álbum: Peligro</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-reik-creo">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+            <div class="spotify-track-row filterable-item" data-track-index="15" data-artist-key="all" data-album-key="album-cyber" data-category="musica" data-subcategory="playlists generos recomendaciones albumes" data-track="Coding &amp; Focus Mix" data-artist="Alejandra UDS · Cyber Study" data-cover="../images/university/ciberceguridad.webp">
+              <span class="sp-row-num">16</span><img src="../images/university/ciberceguridad.webp" alt="Playlist Focus" class="sp-row-thumb" />
+              <div class="sp-row-info"><div class="sp-row-title">Coding &amp; Focus Mix</div><div class="sp-row-artist">Playlist UDS · Álbum: Cyber Study</div></div>
+              <button type="button" class="sp-row-fav" data-fav-id="music-playlist-code">♥</button><span class="sp-row-dur">0:24</span>
+            </div>
+          </div>
+          <div class="sp-list-footer" id="sp-pager-bar">
+            <span id="sp-page-info" class="sp-page-info">Mostrando 1–5 de 16</span>
+            <div class="sp-pager-btns">
+              <button type="button" id="sp-page-prev" class="sp-pager-btn">‹ Ant.</button>
+              <button type="button" id="sp-page-next" class="sp-pager-btn">Sig. ›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Juegos -->
+    <section id="sec-juegos" class="app-section" data-section-category="juegos" data-deck-group="juegos">
+      <div class="cards-deck" data-deck-container="juegos">
+        <article class="glass-card"><div class="card-media is-logo-light"><img src="../images/games/free-fire.png" alt="Free Fire" /><span class="card-badge">Rango: Oro 🏆</span><button type="button" class="fav-toggle-btn is-fav" data-fav-id="game-freefire">♥</button></div><h3 class="card-title">Free Fire</h3><p class="card-meta">Battle Royale · Escuadras y Dúos</p><p class="card-desc">Siempre firme en Rango Oro en clasificatoria con rotaciones en Bermuda, paredes Gloo rápidas y buena puntería.</p></article>
+        <article class="glass-card"><div class="card-media is-composite"><img src="../images/games/vice-city-bg.jpg" alt="Vice City" /><img src="../images/games/vice-city-logo.svg" alt="Vice City Logo" class="composite-logo-overlay" /><span class="card-badge">100% Completado ✓</span><button type="button" class="fav-toggle-btn is-fav" data-fav-id="game-vicecity">♥</button></div><h3 class="card-title">GTA: Vice City</h3><p class="card-meta">Mundo Abierto · Retro 80s</p><p class="card-desc">Historia completa al 100%, todas las propiedades adquiridas, misiones secundarias, saltos y coleccionables.</p></article>
+        <article class="glass-card"><div class="card-media"><img src="../images/games/plantasvzzombies.webp" alt="Plants vs Zombies" class="img-face" /><span class="card-badge">Favorito #1</span><button type="button" class="fav-toggle-btn is-fav" data-fav-id="game-pvz">♥</button></div><h3 class="card-title">Plants vs. Zombies</h3><p class="card-meta">Tower Defense · Modo Infinito</p><p class="card-desc">Estrategia clásica por carriles gestionando soles y combos tácticos en niveles de día, noche, piscina y tejado.</p></article>
+        <article class="glass-card"><div class="card-media is-logo-dark"><img src="../images/games/clash.webp" alt="Clash Free" /><span class="card-badge">Arena PvP</span><button type="button" class="fav-toggle-btn is-fav" data-fav-id="game-clash">♥</button></div><h3 class="card-title">Clash Free</h3><p class="card-meta">Estrategia en Tiempo Real</p><p class="card-desc">Duelos rápidos de 1v1 basados en control de elixir, rotación inteligente de cartas y contraataques precisos.</p></article>
+      </div>
+      <div class="deck-pager" data-deck-pager="juegos"><button type="button" class="btn-glass deck-prev">‹ Anterior</button><div class="pager-dots"></div><button type="button" class="btn-glass deck-next">Siguiente ›</button></div>
+    </section>
+
+    <!-- Películas -->
+    <section id="sec-peliculas" class="app-section" data-section-category="peliculas" data-deck-group="peliculas">
+      <div class="cards-deck" data-deck-container="peliculas">
+        <article class="glass-card"><div class="card-media"><img src="../images/movies/lego-world.jpg" alt="El Mundo LEGO" /><span class="card-badge">Favorita #1 ♥</span><button type="button" class="fav-toggle-btn is-fav" data-fav-id="movie-lego">♥</button></div><h3 class="card-title">El Mundo LEGO</h3><p class="card-desc">Mi película favorita. Soy apasionada de los LEGOs.</p></article>
+        <article class="glass-card"><div class="card-media"><img src="../images/movies/lego-bricks.jpg" alt="Sets LEGO" /><button type="button" class="fav-toggle-btn is-fav" data-fav-id="movie-lego-sets">♥</button></div><h3 class="card-title">Pasión por los LEGOs</h3><p class="card-desc">Creatividad, construcción y diseño bloque a bloque.</p></article>
+        <article class="glass-card"><div class="card-media"><img src="../images/university/ciberceguridad.webp" alt="Mr Robot" /></div><h3 class="card-title">Mr. Robot</h3><p class="card-desc">Serie de ciberseguridad y redes.</p></article>
+        <article class="glass-card"><div class="card-media is-logo"><img src="../images/university/upds.webp" alt="Código Enigma" /></div><h3 class="card-title">El Código Enigma</h3><p class="card-desc">Historia de la criptografía.</p></article>
+      </div>
+      <div class="deck-pager" data-deck-pager="peliculas"><button type="button" class="btn-glass deck-prev">‹ Anterior</button><div class="pager-dots"></div><button type="button" class="btn-glass deck-next">Siguiente ›</button></div>
+    </section>
+
+    <!-- Deportes -->
+    <section id="sec-deportes" class="app-section" data-section-category="deportes" data-deck-group="deportes">
+      <div class="cards-deck" data-deck-container="deportes">
+        <article class="glass-card"><div class="card-media"><img src="../images/sports/voley.webp" alt="Voleibol" class="img-face" /><button type="button" class="fav-toggle-btn is-fav" data-fav-id="sport-voley">♥</button></div><h3 class="card-title">Voleibol</h3><p class="card-desc">Coordinación y trabajo en equipo.</p></article>
+        <article class="glass-card"><div class="card-media"><img src="../images/sports/futsal.webp" alt="Futsal" class="img-crop-watermark" /><button type="button" class="fav-toggle-btn is-fav" data-fav-id="sport-futsal">♥</button></div><h3 class="card-title">Futsal</h3><p class="card-desc">Velocidad y agilidad en cancha.</p></article>
+      </div>
+      <div class="deck-pager" data-deck-pager="deportes"><button type="button" class="btn-glass deck-prev">‹ Anterior</button><div class="pager-dots"></div><button type="button" class="btn-glass deck-next">Siguiente ›</button></div>
+    </section>
+
+    <!-- Universidad -->
+    <section id="sec-universidad" class="app-section" data-section-category="universidad" data-deck-group="universidad">
+      <div class="cards-deck" data-deck-container="universidad">
+        <article class="glass-card"><div class="card-media is-logo"><img src="../images/university/upds.webp" alt="UDS" /><button type="button" class="fav-toggle-btn is-fav" data-fav-id="uni-uds">♥</button></div><h3 class="card-title">Universidad Domingo Savio</h3><p class="card-desc">Ingeniería de Sistemas · 3er Año.</p></article>
+        <article class="glass-card"><div class="card-media is-project-velora"><div class="project-media-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="project-media-tag">Velora · Web App</span></div><span class="card-badge">Completado ✓</span><button type="button" class="fav-toggle-btn" data-fav-id="uni-velora">♥</button></div><h3 class="card-title">Velora</h3><p class="card-desc">Plataforma web moderna creada en la carrera con enfoque en diseño UI/UX y estructura modular.</p></article>
+        <article class="glass-card"><div class="card-media is-project-autos"><div class="project-media-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg><span class="project-media-tag">Reserva de Autos</span></div><span class="card-badge">Sistema Web ✓</span><button type="button" class="fav-toggle-btn" data-fav-id="uni-autos">♥</button></div><h3 class="card-title">Sistema de Reserva de Autos</h3><p class="card-desc">Gestión de vehículos disponibles, reservas por fechas, clientes y control de alquileres.</p></article>
+        <article class="glass-card"><div class="card-media is-project-reposteria"><div class="project-media-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg><span class="project-media-tag">Repostería · En Curso</span></div><span class="card-badge">En Proceso ⏳</span><button type="button" class="fav-toggle-btn" data-fav-id="uni-reposteria">♥</button></div><h3 class="card-title">Sistema para Repostería</h3><p class="card-desc">Proyecto en desarrollo para catálogo de tortas y postres, pedidos personalizados y entregas.</p></article>
+        <article class="glass-card"><div class="card-media"><img src="../images/university/ciberceguridad.webp" alt="Ciberseguridad" /><button type="button" class="fav-toggle-btn is-fav" data-fav-id="uni-cyber">♥</button></div><h3 class="card-title">Ciberseguridad</h3><p class="card-desc">Especialización profesional futura.</p></article>
+      </div>
+      <div class="deck-pager" data-deck-pager="universidad"><button type="button" class="btn-glass deck-prev">‹ Anterior</button><div class="pager-dots"></div><button type="button" class="btn-glass deck-next">Siguiente ›</button></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación inferior">
+    <a href="../index.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Inicio</span></a>
+    <a href="categorias.html" class="bottom-nav-item is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Categorías</span></a>
+    <a href="favoritos.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span id="bottom-fav-badge" class="fav-count-badge">9</span><span>Favoritos</span></a>
+    <a href="perfil.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Perfil</span></a>
+  </nav>
+
+  <div id="modal-settings" class="app-modal" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-header"><h3>Configuración</h3><button type="button" class="icon-btn modal-close-btn">&times;</button></div>
+      <div class="theme-preview-grid">
+        <button type="button" class="theme-card-option dark-swatch is-selected" data-set-theme="dark"><strong>Modo Oscuro</strong><span>Abisal, verde agua y neón</span></button>
+        <button type="button" class="theme-card-option light-swatch" data-set-theme="light"><strong>Modo Claro</strong><span>Blanco, menta y aguamarina</span></button>
+      </div>
+      <div class="hydration-inspector">
+        <div id="hydration-status" class="hydration-badge">● Fase 1: HTML5/CSS3</div>
+        <div id="hydration-last-btn" class="hydration-last-btn">Último botón pulsado: <strong>Ninguno aún</strong></div>
+        <div class="hydration-inspector-actions">
+          <button type="button" id="btn-replay-hydration" class="btn-glow" style="padding:7px 12px; font-size:0.75rem;">✨ Re-animar Hidratación</button>
+          <span style="font-size:0.68rem; color:var(--text-muted);">Las animaciones activan Fase 2</span>
+        </div>
+        <div class="pwa-install-panel">
+          <span id="pwa-install-status">PWA lista para instalar desde GitHub Pages (HTTPS)</span>
+          <button type="button" id="btn-modal-install-pwa" class="btn-glass" data-install-pwa style="padding:5px 10px; font-size:0.7rem;">📲 Instalar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/jquery.min.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/categories.js"></script>
+  <script src="../js/filters.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/jquery-functions.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/hydration.js"></script>
+</body>
+</html>

@@ -1,0 +1,622 @@
+/* ==========================================================================
+   ALEJANDRA SPACE - EDICIÓN LAPTOP & RESPONSIVO (Zero-Scroll 100dvh)
+   Laptop/Escritorio: Menú lateral fijo + Dashboard widescreen en 2 columnas
+   Tablet/Móvil: Adaptación responsiva fluida con barra inferior y drawer
+   ========================================================================== */
+
+/* 1. Móviles compactos / pantallas de altura reducida (<= 700px de alto) */
+@media (max-height: 700px) and (max-width: 639px) {
+  .app-header {
+    margin: 6px auto 4px;
+    padding: 7px 12px;
+  }
+
+  .orbital-stage {
+    --orbit-r: 90px;
+    width: 266px;
+    height: 268px;
+  }
+
+  .profile-core {
+    width: 92px;
+    height: 92px;
+  }
+
+  .orbit-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .orbit-label {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+  }
+
+  .hero-identity {
+    gap: 4px;
+  }
+
+  .hero-quote {
+    padding: 5px 10px;
+  }
+
+  .spotify-player-card {
+    padding: 9px 12px;
+    gap: 5px;
+  }
+
+  .spotify-cover-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  .spotify-track-row {
+    padding: 3px 6px;
+  }
+
+  .sp-row-thumb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sp-artist-pill {
+    padding: 3px 8px;
+    font-size: 0.62rem;
+  }
+
+  .card-media {
+    height: 108px;
+  }
+
+  .hero-badge,
+  .hydration-live-pill,
+  .btn-estatico,
+  .btn-hidratado {
+    padding: 3px 8px;
+    font-size: 0.61rem;
+    gap: 5px;
+  }
+
+  .pwa-nav-menu {
+    min-width: 190px;
+  }
+
+  .drawer-link {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
+}
+
+/* 1b. Móviles Estrechos (< 640px) — Ajuste horizontal 360px–430px sin desbordamiento */
+@media (max-width: 639px) {
+  .app-header {
+    width: calc(100% - 16px);
+    padding: 7px 10px;
+    gap: 6px;
+  }
+
+  .app-shell {
+    padding: 2px 10px 6px;
+  }
+
+  .hero-top-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    max-width: 100%;
+  }
+
+  .orbital-stage {
+    --orbit-r: clamp(78px, min(20vw, 15.5dvh), 116px);
+    width: clamp(232px, min(68vw, 44dvh), 320px);
+    height: clamp(232px, min(64vw, 42dvh), 312px);
+  }
+
+  .orbit-track-inner {
+    width: clamp(114px, 32vw, 156px);
+    height: clamp(114px, 32vw, 156px);
+  }
+
+  .profile-core {
+    width: clamp(86px, 24vw, 118px);
+    height: clamp(86px, 24vw, 118px);
+  }
+
+  .orbit-btn {
+    width: clamp(36px, 10vw, 46px);
+    height: clamp(36px, 10vw, 46px);
+  }
+
+  .bottom-nav {
+    width: calc(100% - 16px);
+    max-width: 440px;
+  }
+}
+
+/* 2. Tablets y Móviles Grandes (640px – 959px) */
+@media (min-width: 640px) and (max-width: 959px) {
+  .app-shell {
+    padding: 4px 20px 8px;
+  }
+
+  .spotify-shell {
+    grid-template-columns: 310px 1fr;
+    gap: 14px;
+  }
+
+  .spotify-player-card {
+    padding: 16px;
+    justify-content: space-between;
+  }
+
+  .spotify-now-playing {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .spotify-cover-wrap {
+    width: clamp(104px, 19dvh, 168px);
+    height: clamp(104px, 19dvh, 168px);
+  }
+
+  .cards-deck,
+  .schedule-cards-deck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-banner-card {
+    grid-template-columns: 200px 1fr;
+    padding: 20px;
+  }
+
+  .profile-photo-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .weekly-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .contact-form .form-group-full,
+  .contact-form .form-submit-row,
+  .contact-form .form-success-banner {
+    grid-column: 1 / -1;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* 3. LAPTOP Y ESCRITORIO (>= 960px) — Sidebar Fijo + Dashboard 2 Columnas
+   ========================================================================== */
+@media (min-width: 960px) {
+  body {
+    display: grid;
+    grid-template-columns: clamp(224px, 18.5vw, 266px) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+      "sidebar header"
+      "sidebar main";
+    gap: 10px 14px;
+    padding: 12px 16px;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden !important;
+  }
+
+  /* Ocultar backdrop y dock inferior móvil en laptop; mantener botón hamburguesa y cierre visibles */
+  #drawer-backdrop,
+  .bottom-nav {
+    display: none !important;
+  }
+
+  #btn-hamburger {
+    display: inline-flex;
+  }
+
+  #btn-hamburger.is-menu-open {
+    border-color: var(--border-accent);
+    background: var(--surface-pill);
+  }
+
+  #btn-close-drawer {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  /* Barra lateral fija colapsable mediante el botón hamburguesa en pantalla grande */
+  .side-drawer {
+    grid-area: sidebar;
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    transform: none !important;
+    border-radius: 22px;
+    border: 1px solid var(--border-glass);
+    padding: clamp(10px, 1.4dvh, 16px) 12px;
+    gap: clamp(6px, 0.9dvh, 10px);
+    z-index: 20;
+    transition: background 0.35s ease, border-color 0.35s ease;
+  }
+
+  body.desktop-sidebar-collapsed {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  body.desktop-sidebar-collapsed .side-drawer {
+    display: none;
+  }
+
+  .drawer-header {
+    padding-bottom: clamp(6px, 1dvh, 10px);
+  }
+
+  .drawer-nav {
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 1px;
+  }
+
+  .drawer-link {
+    padding: clamp(4px, 0.68dvh, 8px) 10px;
+    font-size: clamp(0.74rem, 1.24dvh, 0.84rem);
+    gap: 9px;
+  }
+
+  .drawer-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .drawer-footer {
+    padding-top: clamp(5px, 0.8dvh, 8px);
+  }
+
+  .drawer-footer .tag-chip {
+    font-size: 0.64rem;
+    padding: 2px 7px;
+  }
+
+  /* Cabecera y lienzo principal widescreen */
+  .app-header {
+    grid-area: header;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 9px 18px;
+    border-radius: 20px;
+  }
+
+  .greeting-title {
+    font-size: 1.08rem;
+  }
+
+  .app-shell {
+    grid-area: main;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 2px 2px 0;
+  }
+
+  /* Inicio Hero en 2 columnas: Órbita izquierda + Identidad y Bento derecha */
+  .hero-hub {
+    justify-content: space-between;
+    gap: clamp(8px, 1.3dvh, 14px);
+    padding: 2px 0;
+    text-align: left;
+  }
+
+  .hero-top-pills {
+    width: 100%;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .hero-top-pills .pwa-nav-menu {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+
+  .hero-laptop-grid {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(290px, 0.92fr) minmax(360px, 1.15fr);
+    align-items: center;
+    gap: clamp(14px, 2.2vw, 34px);
+  }
+
+  .hero-orbit-col {
+    height: 100%;
+    min-height: 0;
+    justify-content: center;
+  }
+
+  .orbital-stage {
+    --orbit-r: clamp(100px, 18.2dvh, 174px);
+    width: clamp(286px, 49dvh, 464px);
+    height: clamp(286px, 49dvh, 456px);
+  }
+
+  .hero-info-col {
+    height: 100%;
+    min-height: 0;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(8px, 1.4dvh, 16px);
+  }
+
+  .hero-identity {
+    max-width: none;
+    margin: 0;
+    align-items: flex-start;
+    text-align: left;
+    gap: clamp(6px, 1dvh, 10px);
+  }
+
+  .hero-edition-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-name {
+    font-size: clamp(1.6rem, 3.7dvh, 2.55rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.8rem, 1.6dvh, 0.96rem);
+  }
+
+  .hero-quote {
+    width: 100%;
+    font-size: clamp(0.76rem, 1.48dvh, 0.88rem);
+    padding: 8px 14px;
+  }
+
+  .hero-cta-row {
+    justify-content: flex-start;
+  }
+
+  .laptop-dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 1.2dvh, 12px);
+  }
+
+  /* Reproductor Spotify ampliado para laptop */
+  .spotify-shell {
+    grid-template-columns: clamp(320px, 31vw, 410px) minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .spotify-player-card {
+    padding: clamp(14px, 2dvh, 22px);
+    justify-content: space-between;
+  }
+
+  .spotify-now-playing {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .spotify-cover-wrap {
+    width: clamp(110px, 20.5dvh, 194px);
+    height: clamp(110px, 20.5dvh, 194px);
+  }
+
+  /* Mazos de tarjetas, horarios y galería en grilla horizontal */
+  .cards-deck,
+  .schedule-cards-deck {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .card-media {
+    height: clamp(132px, 24dvh, 224px);
+  }
+
+  .profile-banner-card {
+    grid-template-columns: 230px 1fr;
+    padding: 22px;
+    gap: 20px;
+  }
+
+  .profile-photo-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .weekly-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .contact-form .form-group-full,
+  .contact-form .form-submit-row,
+  .contact-form .form-success-banner {
+    grid-column: 1 / -1;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .sp-artist-filters {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 6px;
+  }
+
+  .sp-artist-pill {
+    padding: 3px 9px;
+    font-size: 0.67rem;
+  }
+
+  .toast-container {
+    top: auto;
+    bottom: 18px;
+    right: 18px;
+    max-width: 320px;
+  }
+}
+
+/* 4. Laptops Medianas/Anchas (>= 1120px) — Split Contacto + 7 Redes */
+@media (min-width: 1120px) {
+  .contact-laptop-split {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .contact-side-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 18px;
+  }
+}
+
+/* 5. Laptops Full HD / Pantallas Grandes (>= 1366px y >= 740px alto) */
+@media (min-width: 1366px) and (min-height: 740px) {
+  body {
+    grid-template-columns: 266px minmax(0, 1fr);
+    gap: 14px 18px;
+    padding: 14px 22px;
+  }
+
+  .hero-laptop-grid {
+    gap: 30px;
+  }
+
+  .orbital-stage {
+    --orbit-r: clamp(128px, 21dvh, 186px);
+    width: clamp(340px, 52dvh, 476px);
+    height: clamp(340px, 52dvh, 462px);
+  }
+
+  .cards-deck,
+  .schedule-cards-deck {
+    gap: 18px;
+  }
+
+  .card-media {
+    height: clamp(150px, 26dvh, 240px);
+  }
+
+  .laptop-bento-card {
+    padding: 13px 16px;
+  }
+}
+
+/* 6. Salvaguarda Zero-Scroll para laptops con altura de ventana corta (<= 670px) */
+@media (min-width: 960px) and (max-height: 670px) {
+  body {
+    gap: 8px 12px;
+    padding: 8px 12px;
+  }
+
+  .app-header {
+    padding: 7px 14px;
+  }
+
+  .side-drawer {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .drawer-footer {
+    display: none;
+  }
+
+  .orbital-stage {
+    --orbit-r: 90px;
+    width: 266px;
+    height: 268px;
+  }
+
+  .profile-core {
+    width: 92px;
+    height: 92px;
+  }
+
+  .orbit-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-edition-chip {
+    display: none;
+  }
+
+  .hero-quote {
+    padding: 5px 12px;
+  }
+
+  .laptop-bento-card {
+    padding: 7px 10px;
+    gap: 2px;
+  }
+
+  .bento-title {
+    font-size: 0.8rem;
+  }
+
+  .card-media {
+    height: 120px;
+  }
+}

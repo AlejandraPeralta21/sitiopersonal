@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#041e21" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Alejandra Space" />
+  <title>Contacto | ALEJANDRA SPACE</title>
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../css/dark-mode.css" />
+  <link rel="stylesheet" href="../css/light-mode.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <div class="ambient-orb ambient-orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb ambient-orb-2" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <aside id="side-drawer" class="side-drawer" aria-label="Menú principal">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="../images/profile/profile.png" alt="Alejandra Peralta" class="drawer-avatar" />
+        <div class="drawer-brand-text">
+          <h2>ALEJANDRA SPACE</h2>
+          <span>Edición Laptop · Contacto</span>
+        </div>
+      </div>
+      <button type="button" id="btn-close-drawer" class="icon-btn" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <nav class="drawer-nav" aria-label="Navegación lateral">
+      <a href="../index.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
+      <a href="perfil.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mi perfil</a>
+      <a href="categorias.html#sec-musica" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Música (Spotify)</a>
+      <a href="categorias.html#sec-juegos" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4"/><path d="M8 10v4"/></svg>Juegos</a>
+      <a href="categorias.html#sec-peliculas" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>Películas y series</a>
+      <a href="categorias.html#sec-deportes" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/></svg>Deportes</a>
+      <a href="categorias.html#sec-universidad" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Universidad</a>
+      <a href="horario.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Mi horario</a>
+      <a href="favoritos.html" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Mis favoritos</span><span class="sidebar-badge" data-fav-badge>18</span></a>
+      <a href="../index.html#sec-redes" class="drawer-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></svg>Redes sociales</a>
+      <button type="button" class="drawer-link" data-open-modal="modal-settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>Configuración</button>
+      <a href="contacto.html" class="drawer-link is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contacto</a>
+    </nav>
+    <div class="drawer-footer">
+      <div class="card-tags" style="justify-content:center;">
+        <a href="perfil.html" class="tag-chip">Perfil</a>
+        <a href="categorias.html" class="tag-chip">Categorías</a>
+        <a href="horario.html" class="tag-chip">Horario</a>
+        <a href="favoritos.html" class="tag-chip">Favoritos</a>
+        <a href="contacto.html" class="tag-chip">Contacto</a>
+      </div>
+    </div>
+  </aside>
+
+  <header class="app-header">
+    <div class="header-left">
+      <a href="#side-drawer" id="btn-hamburger" class="icon-btn" aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="16" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </a>
+      <div class="header-greeting">
+        <span class="greeting-title">Contacto</span>
+        <span id="current-date" class="greeting-date">Validación HTML5 + JS</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="btn-install-pwa" class="btn-glow pwa-install-btn" data-install-pwa style="display:none;" title="Descargar e instalar como App">📲 Instalar</button>
+      <a href="../index.html" class="btn-glass" style="padding:7px 12px; font-size:0.78rem;">← Inicio</a>
+      <button type="button" id="btn-theme-toggle" class="icon-btn" aria-label="Cambiar tema">☀</button>
+      <button type="button" id="btn-open-settings" class="icon-btn" aria-label="Configuración">⚙</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section id="sec-contacto" class="app-section is-active-view">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon-badge">✉</div>
+          <div>
+            <h1 class="section-title">Envíame un Mensaje</h1>
+            <p class="section-subtitle">Validación cliente sin servidor backend</p>
+          </div>
+        </div>
+        <div id="contenedorMenu" class="pwa-hydration-box" data-hidratado="false">
+          <button type="button" id="btnPWA" class="btn-estatico" aria-expanded="false" aria-controls="navMenu">Cargando Menú...</button>
+          <button type="button" class="hydration-live-pill" data-hydration-pill data-open-modal="modal-settings" aria-live="polite" title="Estado de Hidratación Progresiva">
+            <span class="hydration-pill-dot"></span>
+            <span class="hydration-pill-text">● Fase 1: HTML Estático</span>
+          </button>
+          <nav id="navMenu" class="pwa-nav-menu" style="display:none;" aria-label="Menú Rápido PWA">
+            <a href="../index.html" class="pwa-nav-link"><span>⌂ Inicio Orbital</span><span>→</span></a>
+            <a href="perfil.html" class="pwa-nav-link"><span>★ Mi Perfil</span><span>→</span></a>
+            <a href="categorias.html" class="pwa-nav-link"><span>♫ Categorías &amp; Spotify</span><span>→</span></a>
+            <a href="horario.html" class="pwa-nav-link"><span>🗓 Mi Horario</span><span>→</span></a>
+            <a href="favoritos.html" class="pwa-nav-link"><span>♥ Mis Favoritos</span><span>→</span></a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="contact-laptop-split">
+        <aside class="glass-card contact-side-card">
+          <div>
+            <span class="tag-chip">Contacto · Edición Laptop</span>
+            <h3 class="card-title" style="margin-top:8px;">Alejandra Peralta</h3>
+            <p class="card-desc" style="margin-top:4px;">Estudiante de 3er Año de Ingeniería de Sistemas en la Universidad Domingo Savio (UDS), enfocada en Ciberseguridad.</p>
+          </div>
+          <div class="profile-details-grid" style="grid-template-columns:1fr;">
+            <div class="info-stat-box">
+              <div class="info-stat-label">Disponibilidad Académica</div>
+              <div class="info-stat-value">Lun–Vie · 08:30 – 11:45 (UDS)</div>
+            </div>
+            <div class="info-stat-box">
+              <div class="info-stat-label">Horario Laboral</div>
+              <div class="info-stat-value">Lun–Vie 14:00–21:00 · Sáb 11:00–22:00</div>
+            </div>
+          </div>
+          <a href="../index.html#sec-redes" class="btn-glass" style="width:100%;">🌐 Ver Redes Sociales →</a>
+        </aside>
+
+        <div class="glass-card contact-form-card" style="flex:1; justify-content:center;">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group" data-field="name">
+              <label for="contact-name" class="form-label">Nombre completo *</label>
+              <input type="text" id="contact-name" name="name" class="form-control" placeholder="Ej. Sofía Vargas" required minlength="3" />
+              <span class="field-feedback">Mínimo 3 caracteres.</span>
+            </div>
+
+            <div class="form-group" data-field="email">
+              <label for="contact-email" class="form-label">Correo electrónico *</label>
+              <input type="email" id="contact-email" name="email" class="form-control" placeholder="sofia@correo.com" required />
+              <span class="field-feedback">Ingresa un correo válido.</span>
+            </div>
+
+            <div class="form-group" data-field="subject">
+              <label for="contact-subject" class="form-label">Asunto *</label>
+              <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Consulta de Ciberseguridad" required minlength="4" />
+              <span class="field-feedback">Mínimo 4 caracteres.</span>
+            </div>
+
+            <div class="form-group" data-field="category">
+              <label for="contact-category" class="form-label">Categoría *</label>
+              <select id="contact-category" name="category" class="form-control" required>
+                <option value="">Selecciona una categoría...</option>
+                <option value="universidad">Universidad / UDS</option>
+                <option value="proyectos">Proyectos Web</option>
+                <option value="musica">Música</option>
+                <option value="deportes">Deportes</option>
+              </select>
+              <span class="field-feedback">Selecciona una opción.</span>
+            </div>
+
+            <div class="form-group form-group-full" data-field="message">
+              <label for="contact-message" class="form-label">Mensaje * (<span id="msg-char-count">0</span> / 15 mín)</label>
+              <textarea id="contact-message" name="message" rows="2" class="form-control" placeholder="Escribe tu mensaje aquí..." required minlength="15"></textarea>
+              <span class="field-feedback">Mínimo 15 caracteres requeridos.</span>
+            </div>
+
+            <div id="contact-success-banner" class="form-success-banner" role="status">
+              ✓ Formulario validado con éxito (sin servidor backend conectado).
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-glow" style="width:100%;">Validar Formulario</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación inferior">
+    <a href="../index.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Inicio</span></a>
+    <a href="categorias.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Categorías</span></a>
+    <a href="favoritos.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span id="bottom-fav-badge" class="fav-count-badge">9</span><span>Favoritos</span></a>
+    <a href="perfil.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Perfil</span></a>
+  </nav>
+
+  <div id="modal-settings" class="app-modal" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-header"><h3>Configuración</h3><button type="button" class="icon-btn modal-close-btn">&times;</button></div>
+      <div class="theme-preview-grid">
+        <button type="button" class="theme-card-option dark-swatch is-selected" data-set-theme="dark"><strong>Modo Oscuro</strong><span>Abisal, verde agua y neón</span></button>
+        <button type="button" class="theme-card-option light-swatch" data-set-theme="light"><strong>Modo Claro</strong><span>Blanco, menta y aguamarina</span></button>
+      </div>
+      <div class="hydration-inspector">
+        <div id="hydration-status" class="hydration-badge">● Fase 1: HTML5/CSS3</div>
+        <div id="hydration-last-btn" class="hydration-last-btn">Último botón pulsado: <strong>Ninguno aún</strong></div>
+        <div class="hydration-inspector-actions">
+          <button type="button" id="btn-replay-hydration" class="btn-glow" style="padding:7px 12px; font-size:0.75rem;">✨ Re-animar Hidratación</button>
+          <span style="font-size:0.68rem; color:var(--text-muted);">Las animaciones activan Fase 2</span>
+        </div>
+        <div class="pwa-install-panel">
+          <span id="pwa-install-status">PWA lista para instalar desde GitHub Pages (HTTPS)</span>
+          <button type="button" id="btn-modal-install-pwa" class="btn-glass" data-install-pwa style="padding:5px 10px; font-size:0.7rem;">📲 Instalar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/jquery.min.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/categories.js"></script>
+  <script src="../js/filters.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/jquery-functions.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/hydration.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   ALEJANDRA SPACE - Dark Mode Theme Variables
+   Paleta: Verde Abisal Profundo, Verde Agua Neón, Aguamarina y Menta Eléctrica
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Fondos principales */
+  --bg-primary: #031517;
+  --bg-secondary: #072226;
+  --bg-tertiary: #0b3136;
+  --bg-gradient:
+    radial-gradient(circle at 15% 15%, rgba(45, 212, 191, 0.24) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(6, 182, 212, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
+    linear-gradient(165deg, #021012 0%, #062124 52%, #031417 100%);
+
+  /* Superficies Glassmorphism */
+  --surface-glass: rgba(204, 251, 241, 0.055);
+  --surface-glass-strong: rgba(5, 32, 36, 0.88);
+  --surface-glass-hover: rgba(94, 234, 212, 0.12);
+  --surface-card: rgba(6, 36, 40, 0.68);
+  --surface-input: rgba(3, 21, 24, 0.78);
+  --surface-pill: rgba(45, 212, 191, 0.15);
+  --surface-pill-active: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+
+  /* Bordes y sombras */
+  --border-glass: rgba(153, 246, 228, 0.16);
+  --border-glow: rgba(45, 212, 191, 0.56);
+  --border-accent: rgba(45, 212, 191, 0.52);
+  --shadow-soft: 0 12px 35px rgba(1, 14, 16, 0.65);
+  --shadow-glow: 0 0 26px rgba(45, 212, 191, 0.34), 0 0 54px rgba(6, 182, 212, 0.2);
+  --shadow-card: 0 16px 40px rgba(2, 16, 18, 0.52);
+  --glow-pink: 0 0 18px rgba(45, 212, 191, 0.36), 0 0 36px rgba(6, 182, 212, 0.18);
+  --glow-purple: 0 0 24px rgba(20, 184, 166, 0.32), 0 0 48px rgba(8, 145, 178, 0.16);
+  --glow-orbit: 0 0 22px rgba(94, 234, 212, 0.42), 0 0 44px rgba(45, 212, 191, 0.22);
+
+  /* Textos */
+  --text-primary: #f0fdfa;
+  --text-secondary: #ccfbf1;
+  --text-muted: #7dd3c8;
+  --text-on-accent: #ffffff;
+
+  /* Colores de acento (variables conservadas + verde agua) */
+  --accent-pink: #2dd4bf;
+  --accent-magenta: #10b981;
+  --accent-purple: #14b8a6;
+  --accent-violet: #0891b2;
+  --accent-cyan: #67e8f9;
+  --accent-success: #34d399;
+  --accent-warning: #fbbf24;
+  --accent-danger: #fb7185;
+  --accent-error: #fb7185;
+
+  /* Spotify / Reproductor Verde Agua */
+  --spotify-green: #2dd4bf;
+  --spotify-green-glow: rgba(45, 212, 191, 0.42);
+  --spotify-bg: linear-gradient(160deg, rgba(6, 40, 44, 0.94) 0%, rgba(3, 21, 24, 0.96) 100%);
+
+  /* Degradados */
+  --gradient-brand: linear-gradient(135deg, #5eead4 0%, #14b8a6 50%, #0284c7 100%);
+  --gradient-card-accent: linear-gradient(135deg, rgba(45, 212, 191, 0.18), rgba(6, 182, 212, 0.18));
+  --gradient-ring: conic-gradient(from 0deg, #5eead4, #2dd4bf, #38bdf8, #5eead4);
+
+  /* Overlays */
+  --overlay-backdrop: rgba(2, 14, 16, 0.78);
+  --drawer-backdrop: rgba(2, 14, 16, 0.78);
+  --nav-bg: rgba(4, 24, 28, 0.92);
+}
